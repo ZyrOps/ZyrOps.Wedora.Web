@@ -1,0 +1,13 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^$ public/index.php [L,QSA]
+    RewriteRule ^index\.php$ public/index.php [L,QSA]
+
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L,QSA]
+    RewriteRule ^api/(.*)$ public/api/$1 [L,QSA]
+
+    RewriteRule ^(discover|plan|saved|vendor-dashboard|vendor-register|vendor|wedding|weddings)\.php$ public/$1.php [L,QSA]
+</IfModule>
